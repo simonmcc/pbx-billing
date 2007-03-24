@@ -1,0 +1,8 @@
+<% for column in Btbilldetail.content_columns %>
+<p>
+  <b><%= column.human_name %>:</b> <%=h @btbilldetail.send(column.name) %>
+</p>
+<% end %>
+
+<%= link_to 'Edit', :action => 'edit', :id => @btbilldetail %> |
+<%= link_to 'Back', :action => 'list' %>
