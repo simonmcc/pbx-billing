@@ -33,12 +33,6 @@ class BtbillsController < ApplicationController
     # Now remove the String containing the CSV from the hash
     params['btbill'].delete('billcsv')
 
-    logger.debug "CSV:"
-    logger.debug csv
-
-    # params is a method which returns a hash of all the form/request parameters
-    # btill is the form name, tmp_file is the parameter from the file elelemnt of the form.
-    
     # Standard save parameters that match fileds out to the database
     @btbill = Btbill.new(params[:btbill])
     if @btbill.save
@@ -51,7 +45,6 @@ class BtbillsController < ApplicationController
 
     # Now that the btbill object has been created, add all the children records
     # with the parent ID.
-    flash[:notice] = @btbill['id']
 
     # One of the fields is special, it should be an IOString object
     # of the file, pass this model for handling..
@@ -63,7 +56,6 @@ class BtbillsController < ApplicationController
     #@btbilldetails = Btbilldetail.find(:all, :conditions => ["btbill_id = ?", @btbill['id']])
 
     #Btbilldetails.count_by_sql "SELECT COUNT(*) FROM btbilldetails where btbill_id=" + @btbill['id']
-
 
     @btbill 
 
