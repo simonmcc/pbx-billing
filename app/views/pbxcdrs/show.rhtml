@@ -1,0 +1,8 @@
+<% for column in Pbxcdr.content_columns %>
+<p>
+  <b><%= column.human_name %>:</b> <%=h @pbxcdr.send(column.name) %>
+</p>
+<% end %>
+
+<%= link_to 'Edit', :action => 'edit', :id => @pbxcdr %> |
+<%= link_to 'Back', :action => 'list' %>

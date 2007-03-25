@@ -1,0 +1,9 @@
+<h1>Editing pbxcdr</h1>
+
+<% form_tag :action => 'update', :id => @pbxcdr do %>
+  <%= render :partial => 'form' %>
+  <%= submit_tag 'Edit' %>
+<% end %>
+
+<%= link_to 'Show', :action => 'show', :id => @pbxcdr %> |
+<%= link_to 'Back', :action => 'list' %>

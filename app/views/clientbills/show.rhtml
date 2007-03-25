@@ -1,0 +1,8 @@
+<% for column in Clientbill.content_columns %>
+<p>
+  <b><%= column.human_name %>:</b> <%=h @clientbill.send(column.name) %>
+</p>
+<% end %>
+
+<%= link_to 'Edit', :action => 'edit', :id => @clientbill %> |
+<%= link_to 'Back', :action => 'list' %>

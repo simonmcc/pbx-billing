@@ -1,0 +1,16 @@
+<%= error_messages_for 'clientbill' %>
+
+<!--[form:clientbill]-->
+<p><label for="clientbill_name">Name</label><br/>
+<%= text_field 'clientbill', 'name'  %></p>
+
+<p><label for="clientbill_startdate">Startdate</label><br/>
+<%= datetime_select 'clientbill', 'startdate'  %></p>
+
+<p><label for="clientbill_enddate">Enddate</label><br/>
+<%= datetime_select 'clientbill', 'enddate'  %></p>
+
+<p><label for="clientbill_total">Total</label><br/>
+<%= text_field 'clientbill', 'total'  %></p>
+<!--[eoform:clientbill]-->
+

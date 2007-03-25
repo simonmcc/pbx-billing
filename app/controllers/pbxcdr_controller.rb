@@ -1,0 +1,2 @@
+class PbxcdrController < ApplicationController
+end

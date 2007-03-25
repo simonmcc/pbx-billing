@@ -6,6 +6,8 @@ class Btbill < ActiveRecord::Base
 
     def self.upload_csv(btbill_id, csvstring)
 
+	calledno = String.new
+
         # Parse the CSV
 	FasterCSV.parse(csvstring.read, :headers => true, :header_converters => [:downcase]) do |row|
 
@@ -14,6 +16,11 @@ class Btbill < ActiveRecord::Base
    	    # the btbill id record into
 
     	    row << ({ 'btbill_id' => btbill_id })
+
+  	    # Get the calledno field, remove the space & add it back to the row
+	    calledno = row.field('calledno').gsub(/ /, '')
+	    row.delete('calledno')
+    	    row << ({ 'calledno' => calledno })
 
 	    Btbilldetail.create(row.to_hash)
         end

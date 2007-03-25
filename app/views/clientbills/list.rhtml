@@ -1,0 +1,27 @@
+<h1>Listing clientbills</h1>
+
+<table>
+  <tr>
+  <% for column in Clientbill.content_columns %>
+    <th><%= column.human_name %></th>
+  <% end %>
+  </tr>
+  
+<% for clientbill in @clientbills %>
+  <tr>
+  <% for column in Clientbill.content_columns %>
+    <td><%=h clientbill.send(column.name) %></td>
+  <% end %>
+    <td><%= link_to 'Show', :action => 'show', :id => clientbill %></td>
+    <td><%= link_to 'Edit', :action => 'edit', :id => clientbill %></td>
+    <td><%= link_to 'Destroy', { :action => 'destroy', :id => clientbill }, :confirm => 'Are you sure?', :method => :post %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to 'Previous page', { :page => @clientbill_pages.current.previous } if @clientbill_pages.current.previous %>
+<%= link_to 'Next page', { :page => @clientbill_pages.current.next } if @clientbill_pages.current.next %> 
+
+<br />
+
+<%= link_to 'New clientbill', :action => 'new' %>
