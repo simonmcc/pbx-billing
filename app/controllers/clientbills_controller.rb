@@ -48,4 +48,10 @@ class ClientbillsController < ApplicationController
     Clientbill.find(params[:id]).destroy
     redirect_to :action => 'list'
   end
+
+  def create_clientcdrs
+    clientbill = Clientbill.find(params[:id])
+    clientbill.create_clientcdrs
+  end
+
 end

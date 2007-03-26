@@ -11,7 +11,8 @@ class BtbillsController < ApplicationController
   def list
     @btbill_pages, @btbills = paginate :btbills, :per_page => 10
 
-    @btbilldetails = Btbilldetail.find(:all)
+    # This is mad...
+    # @btbilldetails = Btbilldetail.find(:all)
   end
 
   def show

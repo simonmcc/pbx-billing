@@ -2,18 +2,19 @@
 
 <table>
   <tr>
-  <% for column in Clientbill.content_columns %>
+  <% for column in Clientbill.columns %>
     <th><%= column.human_name %></th>
   <% end %>
   </tr>
   
 <% for clientbill in @clientbills %>
   <tr>
-  <% for column in Clientbill.content_columns %>
+  <% for column in Clientbill.columns %>
     <td><%=h clientbill.send(column.name) %></td>
   <% end %>
     <td><%= link_to 'Show', :action => 'show', :id => clientbill %></td>
     <td><%= link_to 'Edit', :action => 'edit', :id => clientbill %></td>
+    <td><%= link_to 'Run', :action => 'create_clientcdrs', :id => clientbill %></td>
     <td><%= link_to 'Destroy', { :action => 'destroy', :id => clientbill }, :confirm => 'Are you sure?', :method => :post %></td>
   </tr>
 <% end %>
