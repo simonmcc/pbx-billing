@@ -10,9 +10,9 @@ class BtbilldetailsController < ApplicationController
 
   def list
     if params[:btbill_id].nil?
-        @btbilldetail_pages, @btbilldetails = paginate :btbilldetails, :per_page => 10
+        @btbilldetail_pages, @btbilldetails = paginate :btbilldetails, :per_page => 33
     else
-        @btbilldetail_pages = Paginator.new self, Btbilldetail.count, 10, @params['page']
+        @btbilldetail_pages = Paginator.new self, Btbilldetail.count, 60, @params['page']
         @btbilldetails = Btbilldetail.find(:all,
 				           :conditions => ["btbill_id = ?", params[:btbill_id]])
         params[:btbill_id] = nil

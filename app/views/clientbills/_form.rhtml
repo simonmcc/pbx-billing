@@ -1,6 +1,11 @@
 <%= error_messages_for 'clientbill' %>
 
 <!--[form:clientbill]-->
+<p><label for="clientbill_client_id">Client</label><br/>
+<select id="clientbill_client_id" name="clientbill[client_id]">
+<%= options_from_collection_for_select @clients, "id", "name", @clientbill.client_id %>
+</select>
+
 <p><label for="clientbill_name">Name</label><br/>
 <%= text_field 'clientbill', 'name'  %></p>
 
@@ -12,5 +17,6 @@
 
 <p><label for="clientbill_total">Total</label><br/>
 <%= text_field 'clientbill', 'total'  %></p>
+
 <!--[eoform:clientbill]-->
 

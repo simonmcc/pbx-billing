@@ -9,15 +9,27 @@ class ClientbillsController < ApplicationController
          :redirect_to => { :action => :list }
 
   def list
+    @clients = Client.find(:all)
     @clientbill_pages, @clientbills = paginate :clientbills, :per_page => 10
   end
 
   def show
+    @clients = Client.find(:all)
     @clientbill = Clientbill.find(params[:id])
   end
 
   def new
-    @clientbill = Clientbill.new
+    @clients = Client.find(:all)
+    if params[:client_id].nil?
+      @clientbill = Clientbill.new
+    else
+      @clientbill = Clientbill.new( :client_id => params[:client_id])
+    end
+  end
+
+  def new_with_client_id
+    @clientbill = Clientbill.new( :client_id => params[:client_id])
+    logger.info "Where do we go after a new? to the view?"
   end
 
   def create
@@ -31,6 +43,7 @@ class ClientbillsController < ApplicationController
   end
 
   def edit
+    @clients = Client.find(:all)
     @clientbill = Clientbill.find(params[:id])
   end
 

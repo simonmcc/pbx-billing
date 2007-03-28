@@ -10,7 +10,11 @@
 <% for clientbill in @clientbills %>
   <tr>
   <% for column in Clientbill.columns %>
-    <td><%=h clientbill.send(column.name) %></td>
+    <% if column.name == "client_id" %></td>
+      <td><%= clientbill.client_id %></td>
+    <% else %>
+      <td><%=h clientbill.send(column.name) %></td>
+    <% end %>
   <% end %>
     <td><%= link_to 'Show', :action => 'show', :id => clientbill %></td>
     <td><%= link_to 'Edit', :action => 'edit', :id => clientbill %></td>

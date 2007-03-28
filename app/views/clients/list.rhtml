@@ -14,6 +14,7 @@
   <% end %>
     <td><%= link_to 'Show', :action => 'show', :id => client %></td>
     <td><%= link_to 'Edit', :action => 'edit', :id => client %></td>
+    <td><%= link_to 'New Bill', :controller => 'clientbills', :action => 'new', :client_id => client %></td>
     <td><%= link_to 'Destroy', { :action => 'destroy', :id => client }, :confirm => 'Are you sure?', :method => :post %></td>
   </tr>
 <% end %>

@@ -2,14 +2,14 @@
 
 <table>
   <tr>
-  <% for column in Clientcdr.content_columns %>
+  <% for column in Clientcdr.columns %>
     <th><%= column.human_name %></th>
   <% end %>
   </tr>
   
 <% for clientcdr in @clientcdrs %>
   <tr>
-  <% for column in Clientcdr.content_columns %>
+  <% for column in Clientcdr.columns %>
     <td><%=h clientcdr.send(column.name) %></td>
   <% end %>
     <td><%= link_to 'Show', :action => 'show', :id => clientcdr %></td>

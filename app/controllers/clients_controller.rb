@@ -48,4 +48,9 @@ class ClientsController < ApplicationController
     Client.find(params[:id]).destroy
     redirect_to :action => 'list'
   end
+
+  def newbill
+     #redirect_to :target => 'clientbills', :action => Clientbill.newbill, :client_id => params[:client]
+     redirect_to :controller => 'clientbills', :action => new, :client_id => params[:client]
+  end
 end
