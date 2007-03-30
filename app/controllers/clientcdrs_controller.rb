@@ -9,7 +9,7 @@ class ClientcdrsController < ApplicationController
          :redirect_to => { :action => :list }
 
   def list
-    @clientcdr_pages, @clientcdrs = paginate :clientcdrs, :per_page => 10
+    @clientcdr_pages, @clientcdrs = paginate :clientcdrs, :per_page => 30
   end
 
   def show
