@@ -12,16 +12,12 @@
   <% for column in Clientcdr.columns %>
     <td><%=h clientcdr.send(column.name) %></td>
   <% end %>
-    <td><%= link_to 'Show', :action => 'show', :id => clientcdr %></td>
-    <td><%= link_to 'Edit', :action => 'edit', :id => clientcdr %></td>
-    <td><%= link_to 'Destroy', { :action => 'destroy', :id => clientcdr }, :confirm => 'Are you sure?', :method => :post %></td>
   </tr>
 <% end %>
 </table>
 
-<%= link_to 'Previous page', { :page => @clientcdr_pages.current.previous } if @clientcdr_pages.current.previous %>
-<%= link_to 'Next page', { :page => @clientcdr_pages.current.next } if @clientcdr_pages.current.next %> 
+<%= link_to 'Previous page', { :page => @clientcdr_pages.current.previous, :clientbill_id => @clientbill_id } if @clientcdr_pages.current.previous %>
+<%= link_to 'Next page', { :page => @clientcdr_pages.current.next , :clientbill_id => @clientbill_id } if @clientcdr_pages.current.next %> 
 
 <br />
 
-<%= link_to 'New clientcdr', :action => 'new' %>

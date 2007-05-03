@@ -13,6 +13,8 @@ class Btbill < ActiveRecord::Base
 
         # Parse the CSV
 	FasterCSV.parse(csvstring.read, :headers => true, :header_converters => [:downcase]) do |row|
+	    logger.debug "Is there a 0 ?"
+	    logger.debug row
 
 	    # use row here...
 	    # Create a btbilldetails object, using the row, which we have inserted

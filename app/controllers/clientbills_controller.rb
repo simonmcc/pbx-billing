@@ -65,7 +65,7 @@ class ClientbillsController < ApplicationController
   def create_clientcdrs
     clientbill = Clientbill.find(params[:id])
     clientbill.create_clientcdrs(params[:id])
-    redirect_to :controller => 'clientcdrs', :action => 'list'
+    redirect_to :controller => 'clientcdrs', :action => 'list', :clientbill_id => params[:id]
   end
 
   def clear_clientcdrs

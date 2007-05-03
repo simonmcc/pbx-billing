@@ -1,6 +1,6 @@
 <h1>Listing clientbills</h1>
 
-<table>
+<table border="1">
   <tr>
   <% for column in Clientbill.columns %>
     <th><%= column.human_name %></th>
@@ -20,6 +20,7 @@
     <td><%= link_to 'Edit', :action => 'edit', :id => clientbill %></td>
     <td><%= link_to 'Run', :action => 'create_clientcdrs', :id => clientbill %></td>
     <td><%= link_to 'Clear', :action => 'clear_clientcdrs', :clientbill_id => clientbill %></td>
+    <td><%= link_to 'Show Bill Details', :controller => 'clientcdrs', :action => 'list', :clientbill_id => clientbill %></td>
     <td><%= link_to 'Destroy', { :action => 'destroy', :id => clientbill }, :confirm => 'Are you sure?', :method => :post %></td>
   </tr>
 <% end %>
