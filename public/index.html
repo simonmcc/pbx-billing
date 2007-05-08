@@ -204,68 +204,33 @@
   </head>
   <body>
     <div id="page">
-      <div id="sidebar">
-        <ul id="sidebar-items">
-          <li>
-            <form id="search" action="http://www.google.com/search" method="get">
-              <input type="hidden" name="hl" value="en" />
-              <input type="text" id="search-text" name="q" value="site:rubyonrails.org " />
-              <input type="submit" value="Search" /> the Rails site
-            </form>
-          </li>
-        
-          <li>
-            <h3>Join the community</h3>
-            <ul class="links">
-              <li><a href="http://www.rubyonrails.org/">Ruby on Rails</a></li>
-              <li><a href="http://weblog.rubyonrails.org/">Official weblog</a></li>
-              <li><a href="http://lists.rubyonrails.org/">Mailing lists</a></li>
-              <li><a href="http://wiki.rubyonrails.org/rails/pages/IRC">IRC channel</a></li>
-              <li><a href="http://wiki.rubyonrails.org/">Wiki</a></li>
-              <li><a href="http://dev.rubyonrails.org/">Bug tracker</a></li>
-            </ul>
-          </li>
-          
-          <li>
-            <h3>Browse the documentation</h3>
-            <ul class="links">
-              <li><a href="http://api.rubyonrails.org/">Rails API</a></li>
-              <li><a href="http://stdlib.rubyonrails.org/">Ruby standard library</a></li>
-              <li><a href="http://corelib.rubyonrails.org/">Ruby core</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-
       <div id="content">
         <div id="header">
           <h1>Welcome aboard</h1>
           <h2>You&rsquo;re riding the Rails!</h2>
+          <h2>(more like the Stirk Lamont PBXWare billing fudge..)</h2>
         </div>
 
-        <div id="about">
-          <h3><a href="rails/info/properties" onclick="about(); return false">About your application&rsquo;s environment</a></h3>
-          <div id="about-content" style="display: none"></div>
-        </div>
-        
         <div id="getting-started">
           <h1>Getting started</h1>
           <h2>Here&rsquo;s how to get rolling:</h2>
           
           <ol>
             <li>
-              <h2>Create your databases and edit <tt>config/database.yml</tt></h2>
-              <p>Rails needs to know your login and password.</p>
+              <h2>Import a BT Bill</tt></h2>
+              <p>Do this by going to <a href="/btbills">BT Bills</a> and clicking on new bill (or just click <a href="/btbills/new">here</a>!)</p>
             </li>
           
             <li>
-              <h2>Use <tt>script/generate</tt> to create your models and controllers</h2>
-              <p>To see all available options, run it without parameters.</p>
+              <h2>Go to the Client Bills section</h2>
+              <p>By clicking <a href="/clientbills">here</a>, if the bill you are looking for isn't there, click <a href="/clientbills/new">new</a> and define a new client bill.  Once you have created a bill, you need to Run it, so that it is populated with data.<br>
+	      If you have edited a bill definition (i.e. dates, or uploaded new BT Bill data, you need to clear the bill and re-run it.
+              </p>
             </li>
             
             <li>
-              <h2>Set up a default route and remove or rename this file</h2>
-              <p>Routes are setup in config/routes.rb.</p>
+              <h2>Export or view the bill</h2>
+              <p>In the Client Bill page <a href="/clientbills">here</a>, you can "Show Bill Details" or "Export Bill" to see the bill details.
             </li>
           </ol>
         </div>
