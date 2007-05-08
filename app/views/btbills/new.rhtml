@@ -3,9 +3,23 @@
 <% form_tag({:action => 'create'}, 
 	    :multipart => true ) do %>
 
-  <%= render :partial => 'form' %>
 
-  <%= submit_tag "Save" %>
+<%= error_messages_for 'btbill' %>
+
+<p><label for="btbill_bill_date">Bill date</label><br/>
+<%= datetime_select 'btbill', 'bill_date'  %></p>
+
+<p><label for="btbill_uploaded_by">Uploaded by</label><br/>
+<%= text_field 'btbill', 'uploaded_by'  %></p>
+
+<p><label for="btbill_description">Description </label><br/>
+<%= text_field 'btbill', 'description'  %></p>
+
+<input type="file" name="btbill[billcsv]" />
+
+
+
+<%= submit_tag "Save" %>
 <% end %>
 
 

@@ -1,6 +1,9 @@
 <h1>Listing clientcdrs</h1>
 
-<table>
+<%= link_to 'Previous page', { :page => @clientcdr_pages.current.previous, :clientbill_id => @clientbill_id } if @clientcdr_pages.current.previous %>
+<%= link_to 'Next page', { :page => @clientcdr_pages.current.next , :clientbill_id => @clientbill_id } if @clientcdr_pages.current.next %> 
+
+<table border="1">
   <tr>
   <% for column in Clientcdr.columns %>
     <th><%= column.human_name %></th>

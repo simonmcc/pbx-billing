@@ -1,6 +1,9 @@
 <h1>Listing btbills</h1>
 
-<table>
+<%= link_to 'Previous page', { :page => @btbill_pages.current.previous } if @btbill_pages.current.previous %>
+<%= link_to 'Next page', { :page => @btbill_pages.current.next } if @btbill_pages.current.next %> 
+
+<table border="1" >
   <tr>
   <% for column in Btbill.columns %>
     <th><%= column.human_name %></th>

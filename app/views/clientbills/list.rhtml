@@ -1,5 +1,8 @@
 <h1>Listing clientbills</h1>
 
+<%= link_to 'Previous page', { :page => @clientbill_pages.current.previous } if @clientbill_pages.current.previous %>
+<%= link_to 'Next page', { :page => @clientbill_pages.current.next } if @clientbill_pages.current.next %> 
+
 <table border="1">
   <tr>
   <% for column in Clientbill.columns %>

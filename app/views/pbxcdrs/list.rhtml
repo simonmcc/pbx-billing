@@ -1,5 +1,9 @@
 <h1>Listing pbxcdrs</h1>
 
+<%= link_to 'Previous page', { :page => @pbxcdr_pages.current.previous } if @pbxcdr_pages.current.previous %>
+<%= link_to 'Next page', { :page => @pbxcdr_pages.current.next } if @pbxcdr_pages.current.next %> 
+
+
 <table>
   <tr>
   <% for column in Pbxcdr.content_columns %>
