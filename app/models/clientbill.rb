@@ -67,6 +67,17 @@ class Clientbill < ActiveRecord::Base
 
 	  if @btcdr.nil?
 	    logger.debug "3:Couldn't find btbilldetail to match this!!"
+ 
+	    billsecmin = pbxcdr.billsec - 2;
+	    billsecmax = pbxcdr.billsec + 2;
+
+	    @btcdr = Btbilldetail.find(:first, 
+			:conditions => [ "(calledno = ? OR calledno = ?) and dt >= ? and dt <= ? and duration >= ? AND duration <= ?", 
+					pbxcdr.dst, tmpnum, ansmin, ansmax, billsecmin, billsecmax ])
+          end
+
+	  if @btcdr.nil?
+	    logger.debug "4:Couldn't find btbilldetail to match this!!"
 	    logger.debug "Trying to find just using time/duration.."
 	     @btcdr = Btbilldetail.find(:first, :conditions => 
 		    [ "dt >= ? and dt <= ? and duration >= ? AND duration <= ?", 
@@ -74,9 +85,13 @@ class Clientbill < ActiveRecord::Base
           end
 	end
 
-	logger.debug @btcdr.calledno
-	logger.debug @btcdr.dt
-	logger.debug @btcdr.cost
+	if @btcdr.nil?
+	  logger.debug "***Still can't find a record!"
+	else
+	  logger.debug @btcdr.calledno
+	  logger.debug @btcdr.dt
+	  logger.debug @btcdr.cost
+	end
 
 	#
 	# Create the clientcdr object from what we have found.
