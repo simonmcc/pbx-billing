@@ -1,7 +1,7 @@
 <h1>Listing btbilldetails</h1>
 
-<%= link_to 'Previous page', { :page => @btbilldetail_pages.current.previous } if @btbilldetail_pages.current.previous %>
-<%= link_to 'Next page', { :page => @btbilldetail_pages.current.next } if @btbilldetail_pages.current.next %> 
+<%= link_to 'Previous page', { :page => @btbilldetail_pages.current.previous, :btbill_id => @btbill_id } if @btbilldetail_pages.current.previous %>
+<%= link_to 'Next page', { :page => @btbilldetail_pages.current.next, :btbill_id => @btbill_id  } if @btbilldetail_pages.current.next %> 
 
 <table border="1">
   <tr>
@@ -22,7 +22,7 @@
 <% end %>
 </table>
 
-<%= link_to 'Previous page', { :page => @btbilldetail_pages.current.previous } if @btbilldetail_pages.current.previous %>
-<%= link_to 'Next page', { :page => @btbilldetail_pages.current.next } if @btbilldetail_pages.current.next %> 
+<%= link_to 'Previous page', { :page => @btbilldetail_pages.current.previous, :btbill_id => @btbill_id  } if @btbilldetail_pages.current.previous %>
+<%= link_to 'Next page', { :page => @btbilldetail_pages.current.next, :btbill_id => @btbill_id  } if @btbilldetail_pages.current.next %> 
 
 <br />
