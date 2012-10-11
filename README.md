@@ -1,4 +1,4 @@
-==pbx-billing==
+# pbx-billing #
 
 This is a simple Ruby on Rails app that can be used to generate bills from a shared line.
 
